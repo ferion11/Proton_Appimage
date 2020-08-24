@@ -1,19 +1,21 @@
 #!/bin/bash
 
 # If it's a Release Candidate, you will have to change P_VERSION to include the "-rc2" kind of string
-P_URL="https://www.playonlinux.com/wine/binaries/phoenicis/proton-linux-x86/PlayOnLinux-proton_4.2-proton-linux-x86.tar.gz"
+#P_URL="https://www.playonlinux.com/wine/binaries/phoenicis/proton-linux-x86/PlayOnLinux-proton_4.2-proton-linux-x86.tar.gz"
+P_URL="https://github.com/ferion11/f11_wine_builder/releases/download/continuous-proton/wine-proton-5.11.tar.gz"
 
-# staging-linux-x86
-P_NAME=$(echo $P_URL | cut -d/ -f7)
+# proton-linux-x86
+P_NAME="proton-linux-x86"
 
-# PlayOnLinux-wine-4.21-staging-linux-x86.tar.gz
-P_FILENAME=$(echo $P_URL | cut -d/ -f8)
+# PlayOnLinux-proton_4.2-proton-linux-x86.tar.gz
+P_FILENAME="$(echo $P_URL | cut -d/ -f9)"
 
 # PlayOnLinux
-P_CSOURCE=$(echo $P_FILENAME | cut -d- -f1)
+P_CSOURCE="f11"
 
-# 4.21
-P_VERSION=$(echo $P_FILENAME | cut -d- -f2 | cut -d_ -f2)
+# 5.11
+TEMP="$(echo $P_FILENAME | cut -d- -f3)"
+P_VERSION="${TEMP%???????}"
 
 #========================================
 echo "P_URL: $P_URL"

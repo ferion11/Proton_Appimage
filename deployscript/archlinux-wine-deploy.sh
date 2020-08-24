@@ -1,9 +1,10 @@
 #!/bin/bash
-P_URL="https://www.playonlinux.com/wine/binaries/phoenicis/proton-linux-x86/PlayOnLinux-proton_4.2-proton-linux-x86.tar.gz"
-P_NAME=$(echo $P_URL | cut -d/ -f7)
-P_FILENAME=$(echo $P_URL | cut -d/ -f8)
-P_CSOURCE=$(echo $P_FILENAME | cut -d- -f1)
-P_VERSION=$(echo $P_FILENAME | cut -d- -f2 | cut -d_ -f2)
+P_URL="https://github.com/ferion11/f11_wine_builder/releases/download/continuous-proton/wine-proton-5.11.tar.gz"
+P_NAME="proton-linux-x86"
+P_FILENAME="$(echo $P_URL | cut -d/ -f9)"
+P_CSOURCE="f11"
+TEMP="$(echo $P_FILENAME | cut -d- -f3)"
+P_VERSION="${TEMP%???????}"
 WINE_WORKDIR="wineversion"
 PKG_WORKDIR="pkg_work"
 
