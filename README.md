@@ -70,3 +70,4 @@ $ wine vkcube32
 
 [PROTON_release_continuous]: https://github.com/ferion11/Proton_Appimage/releases/tag/continuous "here"
 [WINE_normal]: https://github.com/ferion11/Wine_Appimage "here_link"
+ 
